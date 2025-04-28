@@ -1,21 +1,12 @@
 return {
-  {
-    "oncomouse/lushwal.nvim",
-    cmd = { "LushwalCompile" },
-    init = function()
-      vim.g.lushwal_configuration = {
-        transparent_background = true,
-      }
-    end,
-    dependencies = {
-      { "rktjmp/lush.nvim" },
-      { "rktjmp/shipwright.nvim" },
+    {
+        "folke/tokyonight.nvim",
+        opts = {
+            transparent = true,
+            styles = {
+                sidebars = "transparent",
+                floats = "transparent",
+            },
+        },
     },
-  },
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "lushwal",
-    },
-  },
 }
