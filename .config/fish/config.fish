@@ -98,6 +98,36 @@ cat ~/.cache/wal/sequences
 # Fastfetch
 # -----------------------------------------------------
 
+# -----------------------------------------------------
+# Conda 
+# -----------------------------------------------------
+
+eval "$(/home/clement/miniforge3/bin/conda shell.fish hook)"
+conda deactivate
+
+# -----------------------------------------------------
+# Pixi
+# -----------------------------------------------------
+
+fish_add_path /home/clement/.pixi/bin
+
+# -----------------------------------------------------
+# Cargo
+# -----------------------------------------------------
+
+fish_add_path /home/clement/.cargo/bin
+
+# -----------------------------------------------------
+# Lmod 
+# -----------------------------------------------------
+
+source /usr/share/lmod/lmod/init/fish
+set -x MODULEPATH /usr/share/module/modulefiles /usr/share/lmod/8.7.59/modulefiles/ $MODULEPATH
+
+# -----------------------------------------------------
+# Starting fish
+# -----------------------------------------------------
+
 fastfetch --config examples/13
 
 if status is-interactive
